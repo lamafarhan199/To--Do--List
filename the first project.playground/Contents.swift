@@ -42,15 +42,15 @@ struct List {
             print("Item cannot be deleted")
         }
     }
+    
 }
 class Todolist {
-    var list1 : [List]  = []
-    func removeTask(Listindex : Int, TaskItemindex : Int) {
-        print("Deleted Succefully")
+    var lists : [List]  = []
+    func createList(list: List){
+        self.lists.append(list)
     }
-    
     func readTask() {
-        for item in list1 {
+        for item in lists {
             print(item.title)
             for task in item.items {
                 print(task.title, task.description, task.priority)
@@ -58,27 +58,19 @@ class Todolist {
         }
     }
     
-
-    func addtask(add:List) {
-        self.list1.append(add)
-        print("added succefully")
-    }
 }
 
-//             
+//
+var myLists = Todolist()
 
+ 
 var zerotask = TaskItem(title: "appointment", description: "check", priority: "high", taskstatus: .completed)
 var firsttask = TaskItem (title: "go to the university", description: "studying", priority: "med", taskstatus: .pending)
 var secondtask = TaskItem  (title: "go to the jym", description: "exercises", priority: "med", taskstatus: .pending)
 var thirdtask = TaskItem (title: "appointment", description: "check", priority: "high", taskstatus: .pending)
 
-var myTask = List(title: "list1", items: [zerotask,firsttask])
-var ourtask = List(title: "list2", items:[secondtask,thirdtask])
+myLists.createList(list: List(title: "Work", items: [zerotask, firsttask, secondtask, thirdtask]))
 
-var myList = Todolist()
-myList.addtask(add: myTask)
-myList.addtask(add: ourtask)
- 
+myLists.readTask()
 
-myList.list1[0].removeTaskFromList(index: 1)
-myList.readTask()
+
