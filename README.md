@@ -4,13 +4,21 @@
 - To do list 
 
 # Overview :
--
+-A program that helps you to organize your tasks.
+-You can creat new tasks and modify it  
 
 # Usage :
-_
+-func addtask
+-func updateTaskFromList
+-func removeTaskFromList
+-func createList
+-func readTask
+
+# issues :
+-To make multiple list
 
 # Upcoming features :
-_
+_ sort List by completed status
 
-# Teachnologies :
--
+
+
